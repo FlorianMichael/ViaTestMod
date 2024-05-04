@@ -7,4 +7,6 @@ public class ViaTestMod {
 
     public static final Logger LOGGER = LogUtils.getLogger();
 
+    public static boolean resourcePackDebug;
+
 }

@@ -1,5 +1,6 @@
 package com.viaversion.viatestmod.mixin;
 
+import com.viaversion.viatestmod.ViaTestMod;
 import net.minecraft.client.network.ClientCommonNetworkHandler;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.packet.c2s.common.ResourcePackStatusC2SPacket;
@@ -20,7 +21,7 @@ public abstract class MixinClientCommonNetworkHandler {
 
     @Inject(method = "onResourcePackSend", at = @At("HEAD"), cancellable = true)
     public void blockPack(ResourcePackSendS2CPacket packet, CallbackInfo ci) {
-        if (true) return; // TODO Add toggle
+        if (!ViaTestMod.resourcePackDebug) return;
         this.connection.send(new ResourcePackStatusC2SPacket(packet.id(), ResourcePackStatusC2SPacket.Status.ACCEPTED));
         this.connection.send(new ResourcePackStatusC2SPacket(packet.id(), ResourcePackStatusC2SPacket.Status.DOWNLOADED));
         this.connection.send(new ResourcePackStatusC2SPacket(packet.id(), ResourcePackStatusC2SPacket.Status.SUCCESSFULLY_LOADED));

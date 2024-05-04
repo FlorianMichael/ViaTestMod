@@ -6,7 +6,8 @@
     "MixinClientCommonNetworkHandler",
     "MixinClientConnection",
     "MixinComponentChanges_2",
-    "MixinItemStack"
+    "MixinItemStack",
+    "MixinMultiplayerScreen"
   ],
   "injectors": {
     "defaultRequire": 1
