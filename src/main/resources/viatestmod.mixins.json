@@ -5,8 +5,6 @@
   "mixins": [
     "MixinClientCommonNetworkHandler",
     "MixinClientConnection",
-    "MixinComponentChanges_2",
-    "MixinItemStack",
     "MixinMultiplayerScreen"
   ],
   "injectors": {
